@@ -1,5 +1,7 @@
 package main
 
+import "github.com/nilovartem/l2/develop/dev08/cmd"
+
 /*
 === Взаимодействие с ОС ===
 
@@ -15,5 +17,5 @@ package main
 */
 
 func main() {
-
+	cmd.Execute()
 }
