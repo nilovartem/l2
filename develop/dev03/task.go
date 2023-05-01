@@ -1,5 +1,7 @@
 package main
 
+import "github.com/nilovartem/l2/develop/dev03/cmd"
+
 /*
 === Утилита sort ===
 
@@ -26,5 +28,5 @@ package main
 */
 
 func main() {
-
+	cmd.Execute()
 }
