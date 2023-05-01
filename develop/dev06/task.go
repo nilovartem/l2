@@ -1,5 +1,7 @@
 package main
 
+import "github.com/nilovartem/l2/develop/dev06/cmd"
+
 /*
 === Утилита cut ===
 
@@ -14,5 +16,5 @@ package main
 */
 
 func main() {
-
+	cmd.Execute()
 }
