@@ -1,5 +1,7 @@
 package main
 
+import "github.com/nilovartem/l2/develop/dev05/cmd"
+
 /*
 === Утилита grep ===
 
@@ -19,5 +21,5 @@ package main
 */
 
 func main() {
-
+	cmd.Execute()
 }
