@@ -1,5 +1,7 @@
 package main
 
+import "github.com/nilovartem/l2/develop/dev09/cmd"
+
 /*
 === Утилита wget ===
 
@@ -9,5 +11,5 @@ package main
 */
 
 func main() {
-
+	cmd.Execute()
 }
