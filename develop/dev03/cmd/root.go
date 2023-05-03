@@ -6,12 +6,14 @@ import (
 	"os"
 	"strings"
 
+	"github.com/nilovartem/l2/develop/dev03/sort"
+
 	"github.com/spf13/cobra"
 )
 
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
-	Use:   "sort ",
+	Use:   "sort",
 	Args:  cobra.MatchAll(cobra.MinimumNArgs(1), cobra.OnlyValidArgs),
 	Short: "sort records (lines) of text file",
 	Long:  `The sort utility sorts text file by lines.`,
@@ -20,14 +22,12 @@ var rootCmd = &cobra.Command{
 		numeric, _ := cmd.Flags().GetBool("numeric-sort")
 		reverse, _ := cmd.Flags().GetBool("reverse")
 		unique, _ := cmd.Flags().GetBool("unique")
-
 		strs, err := readFile(args[0])
 		if err != nil {
 			fmt.Fprintln(os.Stderr, err)
 			os.Exit(1)
 		}
-		strs = Sort(strs, key, numeric, reverse, unique)
-
+		strs = sort.Sort(strs, key, numeric, reverse, unique)
 		fmt.Fprintln(os.Stdin, strings.Join(strs, "\n"))
 	},
 }
