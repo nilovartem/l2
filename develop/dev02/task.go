@@ -27,6 +27,7 @@ import (
 */
 func Unpack(s string) (r string, err error) {
 	const slash = "\\"
+	//Если бы передано число, то выбрасываем ошибку
 	if _, err := strconv.Atoi(s); err == nil {
 		return r, errors.New("некорректная строка")
 	}
@@ -35,7 +36,7 @@ func Unpack(s string) (r string, err error) {
 	var b strings.Builder //самый эффективный способ работы со строками
 	for _, char := range s {
 		if unicode.IsDigit(char) && !escaped {
-			m := int(char - '0')
+			m := int(char - '0') //'0' = 48, переводим символ в число
 			r := strings.Repeat(string(last), m-1)
 			b.WriteString(r)
 		} else {
