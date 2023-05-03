@@ -1,5 +1,11 @@
 package main
 
+import (
+	"log"
+
+	"github.com/nilovartem/l2/develop/dev11/server"
+)
+
 /*
 === HTTP server ===
 
@@ -23,5 +29,9 @@ package main
 */
 
 func main() {
-
+	s := server.New()
+	err := s.Run()
+	if err != nil {
+		log.Println(err)
+	}
 }
