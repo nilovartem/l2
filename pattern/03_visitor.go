@@ -42,7 +42,7 @@ func (desc) clientInfo(c Client) {
 
 func (desc) employeeInfo(e Employee) {
 	fmt.Println("Информация о сотруднике:")
-	fmt.Printf("Имя: %v\nЗарплата: %v\n", e.name, e.salary)
+	fmt.Printf("Имя: %v\nЗарплата: %v", e.name, e.salary)
 }
 
 func RunVisitor() {
